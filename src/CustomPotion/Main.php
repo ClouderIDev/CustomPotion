@@ -1,6 +1,6 @@
 <?php
 
-namespace itoozh\AdvancedPots;
+namespace CustomPotion;
 
 use pocketmine\entity\Location;
 use pocketmine\entity\projectile\SplashPotion;
@@ -47,10 +47,6 @@ class Main extends PluginBase implements Listener
             $entity->spawnToAll();
             $item->pop();
             $player->getInventory()->setItemInHand($item);
-            /*$event->cancel();
-            $player = $event->getPlayer();
-            $item->onClickAir($player, $player->getDirectionVector());
-            $player->getInventory()->setItemInHand($item);*/
         }
     }
 
