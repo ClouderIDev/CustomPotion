@@ -20,7 +20,7 @@ class Main extends PluginBase implements Listener
     public function onHit(ProjectileHitBlockEvent $event): void{
         $projectile = $event->getEntity();
 
-        if (!$proyectile instanceof SplashPotion) return;
+        if (!$projectile instanceof SplashPotion) return;
         
         if($projectile->getPotionType() === PotionType::STRONG_HEALING()){
             $player = $projectile->getOwningEntity();
