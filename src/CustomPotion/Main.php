@@ -43,6 +43,7 @@ class Main extends PluginBase implements Listener
         $item = $event->getItem();
 
         if($item instanceof \pocketmine\item\SplashPotion){
+            if ($item->getType() !== PotionType::STRONG_HEALING()) return;
             $player = $event->getPlayer();
             $entity = new SplashPotion(Location::fromObject($player->getEyePos(), $player->getWorld(), $player->getLocation()->yaw, $player->getLocation()->pitch), $player, PotionType::STRONG_HEALING());
             $entity->setMotion($player->getDirectionVector()->multiply($item->getThrowForce()));
